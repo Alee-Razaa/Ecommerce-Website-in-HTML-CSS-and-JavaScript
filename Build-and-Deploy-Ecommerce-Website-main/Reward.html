@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Rewards Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        text-align: center;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 350px;
+      }
+
+      h1 {
+        color: #d32f2f;
+        margin-bottom: 10px;
+      }
+
+      .subheading {
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .timer-heading {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #e60000;
+        margin-bottom: 20px;
+      }
+
+      .reward-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+      }
+
+      .reward-box {
+        background: #ffffff;
+        border: 2px solid #e0e0e0;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .reward-box:not(.disabled):hover {
+        transform: scale(1.05);
+      }
+
+      .reward-box.disabled {
+        background: #f5f5f5;
+        border-color: #9e9e9e;
+        color: #9e9e9e;
+        cursor: not-allowed;
+      }
+
+      .reward-box .status-text {
+        font-weight: bold;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+
+      .reward-box .reward-value {
+        font-size: 1.2rem;
+        font-weight: bold;
+        /* color: red; */
+      }
+
+      @media (max-width: 768px) {
+        .reward-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: #d32f2f;
+        font-weight: bold;
+        background: #fff;
+        padding: 8px 12px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: #d32f2f;
+        color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        .back-button {
+          font-size: 1rem;
+          top: 30px;
+          left: 30px;
+          padding: 6px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="shop.html" class="back-button" onclick="goBack()">← Back</a>
+    <div class="container">
+      <h1>Daily Rewards</h1>
+      <p class="subheading">Click any reward to claim a random value!</p>
+      <p class="timer-heading" id="main-timer"></p>
+
+      <div class="reward-grid">
+        <!-- Reward Boxes -->
+        <div class="reward-box" id="reward-1" onclick="claimReward(1)">
+          <p class="status-text" id="status-1">Reward is ready</p>
+          <p class="reward-value" id="value-1"></p>
+        </div>
+
+        <div class="reward-box" id="reward-2" onclick="claimReward(2)">
+          <p class="status-text" id="status-2">Reward is ready</p>
+          <p class="reward-value" id="value-2"></p>
+        </div>
+
+        <div class="reward-box" id="reward-3" onclick="claimReward(3)">
+          <p class="status-text" id="status-3">Reward is ready</p>
+          <p class="reward-value" id="value-3"></p>
+        </div>
+
+        <div class="reward-box" id="reward-4" onclick="claimReward(4)">
+          <p class="status-text" id="status-4">Reward is ready</p>
+          <p class="reward-value" id="value-4"></p>
+        </div>
+
+        <div class="reward-box" id="reward-5" onclick="claimReward(5)">
+          <p class="status-text" id="status-5">Reward is ready</p>
+          <p class="reward-value" id="value-5"></p>
+        </div>
+
+        <div class="reward-box" id="reward-6" onclick="claimReward(6)">
+          <p class="status-text" id="status-6">Reward is ready</p>
+          <p class="reward-value" id="value-6"></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Available reward values
+      const rewardValues = [500, 1000, 2000, 4000, 8000, 10000];
+      let countdownTimer = null;
+
+      // Claim Reward Function
+      function claimReward(id) {
+        const rewardBox = document.getElementById(`reward-${id}`);
+        const statusText = document.getElementById(`status-${id}`);
+        const rewardValueText = document.getElementById(`value-${id}`);
+        const mainTimer = document.getElementById("main-timer");
+
+        // Prevent clicking if already claimed
+        if (rewardBox.classList.contains("disabled")) return;
+
+        // Generate random reward value
+        const randomValue =
+          rewardValues[Math.floor(Math.random() * rewardValues.length)];
+        rewardValueText.textContent = `You got ${randomValue}!`;
+        statusText.textContent = "";
+        statusText.style.color = "red";
+        rewardBox.classList.add("disabled");
+
+        // Disable all other rewards
+        document.querySelectorAll(".reward-box").forEach((box, index) => {
+          if (index + 1 !== id) {
+            box.classList.add("disabled");
+            box.querySelector(".status-text").textContent = "";
+            box.querySelector(".reward-value").textContent = "Locked";
+          }
+        });
+
+        // Start Timer for 24 Hours
+        const expiryTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours in ms
+
+        // Update Timer Every Second
+        clearInterval(countdownTimer);
+        countdownTimer = setInterval(() => {
+          const now = new Date().getTime();
+          const timeLeft = expiryTime - now;
+
+          if (timeLeft <= 0) {
+            clearInterval(countdownTimer);
+            mainTimer.textContent = "Rewards reset! Claim a reward now.";
+            resetRewards();
+          } else {
+            const hours = Math.floor(
+              (timeLeft % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
+            );
+            const minutes = Math.floor(
+              (timeLeft % (60 * 60 * 1000)) / (60 * 1000)
+            );
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            mainTimer.textContent = `Time left: ${hours}h ${minutes}m ${seconds}s`;
+          }
+        }, 1000);
+      }
+
+      // Reset Rewards After Timer Ends
+      function resetRewards() {
+        document.querySelectorAll(".reward-box").forEach((box, index) => {
+          box.classList.remove("disabled");
+          box.querySelector(".status-text").textContent = "Reward is ready";
+          box.querySelector(".reward-value").textContent = "";
+        });
+
+        function goBack() {
+          window.history.back(); // Navigates to the previous page in browser history
+        }
+      }
+    </script>
+  </body>
+</html>
