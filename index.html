@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modern e-commerce website with the latest fashion trends, electronics, and lifestyle products. Shop with confidence with our rewards program and fast shipping.">
+  <meta name="keywords" content="ecommerce, shopping, fashion, electronics, deals, rewards">
+  <meta name="author" content="Cara Shopping">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cara-shopping.com/">
+  <meta property="og:title" content="Cara - Modern E-commerce Shopping Experience">
+  <meta property="og:description" content="Discover amazing deals on fashion, electronics, and lifestyle products with our modern shopping experience.">
+  <meta property="og:image" content="./assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://cara-shopping.com/">
+  <meta property="twitter:title" content="Cara - Modern E-commerce Shopping Experience">
+  <meta property="twitter:description" content="Discover amazing deals on fashion, electronics, and lifestyle products with our modern shopping experience.">
+  <meta property="twitter:image" content="./assets/images/og-image.jpg">
+
+  <title>Cara - Modern E-commerce Shopping Experience</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="./Build-and-Deploy-Ecommerce-Website-main/img/logo.png">
+  
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://dummyjson.com">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="./styles/tokens.css">
+  <link rel="stylesheet" href="./styles/base.css">
+  <link rel="stylesheet" href="./styles/components/header.css">
+  <link rel="stylesheet" href="./styles/components/buttons.css">
+  <link rel="stylesheet" href="./styles/components/product-card.css">
+  <link rel="stylesheet" href="./styles/pages/home.css">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Cara Shopping",
+    "url": "https://cara-shopping.com",
+    "description": "Modern e-commerce website with fashion, electronics, and lifestyle products",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://cara-shopping.com/shop.html?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Skip to content link for screen readers -->
+  <a href="#main-content" class="header__skip-link">Skip to main content</a>
+  
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__container">
+      <!-- Logo -->
+      <a href="index.html" class="header__logo" aria-label="Cara Shopping - Go to homepage">
+        <img src="./Build-and-Deploy-Ecommerce-Website-main/img/logo.png" alt="Cara Logo" width="40" height="40">
+        <span class="md:hidden">Cara</span>
+      </a>
+      
+      <!-- Desktop Search -->
+      <div class="header__search" role="search">
+        <i class="fas fa-search header__search-icon" aria-hidden="true"></i>
+        <input 
+          type="search" 
+          class="header__search-input" 
+          placeholder="Search products, categories..."
+          aria-label="Search products"
+          id="global-search"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <div class="header__search-suggestions" id="global-search-suggestions" role="listbox" aria-label="Search suggestions"></div>
+      </div>
+      
+      <!-- Navigation -->
+      <nav class="header__nav" role="navigation" aria-label="Main navigation">
+        <button class="header__nav-close btn-close" aria-label="Close navigation menu">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        
+        <!-- Mobile Search -->
+        <div class="header__mobile-search">
+          <div class="header__search">
+            <i class="fas fa-search header__search-icon" aria-hidden="true"></i>
+            <input 
+              type="search" 
+              class="header__search-input" 
+              placeholder="Search products..."
+              aria-label="Search products"
+            >
+          </div>
+        </div>
+        
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="index.html" class="header__nav-link active">
+              <i class="fas fa-home mobile-only" aria-hidden="true"></i>
+              Home
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="./Build-and-Deploy-Ecommerce-Website-main/shop.html" class="header__nav-link">
+              <i class="fas fa-shopping-bag mobile-only" aria-hidden="true"></i>
+              Shop
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="./Build-and-Deploy-Ecommerce-Website-main/blog.html" class="header__nav-link">
+              <i class="fas fa-blog mobile-only" aria-hidden="true"></i>
+              Blog
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="./Build-and-Deploy-Ecommerce-Website-main/about.html" class="header__nav-link">
+              <i class="fas fa-info-circle mobile-only" aria-hidden="true"></i>
+              About
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="./Build-and-Deploy-Ecommerce-Website-main/contact.html" class="header__nav-link">
+              <i class="fas fa-envelope mobile-only" aria-hidden="true"></i>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <!-- Header Actions -->
+      <div class="header__actions">
+        <!-- Theme Toggle -->
+        <button 
+          class="header__theme-toggle" 
+          data-theme-toggle
+          aria-label="Toggle theme"
+          title="Switch theme"
+        >
+          <span class="theme-icon">☀️</span>
+          <span class="theme-label">Light</span>
+        </button>
+        
+        <!-- Rewards -->
+        <a href="./Build-and-Deploy-Ecommerce-Website-main/Reward.html" class="header__action-btn" aria-label="View rewards">
+          <i class="fas fa-gift" aria-hidden="true"></i>
+        </a>
+        
+        <!-- Cart -->
+        <a href="./Build-and-Deploy-Ecommerce-Website-main/cart.html" class="header__action-btn" aria-label="View shopping cart">
+          <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+          <span class="header__cart-badge" id="cart-badge">0</span>
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="header__menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="header__menu-toggle-line"></span>
+          <span class="header__menu-toggle-line"></span>
+          <span class="header__menu-toggle-line"></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="header__overlay"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero section-p1" aria-labelledby="hero-heading">
+      <div class="hero__content">
+        <h4 class="hero__subtitle">Trade-in-offer</h4>
+        <h1 id="hero-heading" class="hero__title">Super value deals</h1>
+        <h2 class="hero__accent">On all products</h2>
+        <p class="hero__description">Save more with coupons & up to 70% off!</p>
+        <a href="./Build-and-Deploy-Ecommerce-Website-main/shop.html" class="btn btn-primary btn-lg">
+          Shop Now
+          <i class="fas fa-arrow-right icon-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="features section-p1" aria-labelledby="features-heading">
+      <div class="container">
+        <h2 id="features-heading" class="sr-only">Our Features</h2>
+        <div class="features__grid grid grid-cols-6">
+          <div class="feature-box">
+            <img src="./Build-and-Deploy-Ecommerce-Website-main/img/features/f1.png" alt="" loading="lazy">
+            <h6>Free Shipping</h6>
+          </div>
+          <div class="feature-box">
+            <img src="./Build-and-Deploy-Ecommerce-Website-main/img/features/f2.png" alt="" loading="lazy">
+            <h6>Online Order</h6>
+          </div>
+          <div class="feature-box">
+            <img src="./Build-and-Deploy-Ecommerce-Website-main/img/features/f3.png" alt="" loading="lazy">
+            <h6>Save Money</h6>
+          </div>
+          <div class="feature-box">
+            <img src="./Build-and-Deploy-Ecommerce-Website-main/img/features/f4.png" alt="" loading="lazy">
+            <h6>Promotions</h6>
+          </div>
+          <div class="feature-box">
+            <img src="./Build-and-Deploy-Ecommerce-Website-main/img/features/f5.png" alt="" loading="lazy">
+            <h6>Happy Sale</h6>
+          </div>
+          <div class="feature-box">
+            <img src="./Build-and-Deploy-Ecommerce-Website-main/img/features/f6.png" alt="" loading="lazy">
+            <h6>24/7 Support</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Weekly Deals Banner -->
+    <section id="weekly-deals" class="weekly-deals section-p1" aria-labelledby="weekly-deals-heading">
+      <div class="container">
+        <div class="deals-banner">
+          <div class="deals-banner__content">
+            <h4>This Week Only</h4>
+            <h2 id="weekly-deals-heading">Weekly Special Deals</h2>
+            <p>Discover amazing discounts on selected items</p>
+            <div class="deals-timer" id="deals-timer">
+              <div class="timer-item">
+                <span class="timer-value" id="days">00</span>
+                <span class="timer-label">Days</span>
+              </div>
+              <div class="timer-item">
+                <span class="timer-value" id="hours">00</span>
+                <span class="timer-label">Hours</span>
+              </div>
+              <div class="timer-item">
+                <span class="timer-value" id="minutes">00</span>
+                <span class="timer-label">Minutes</span>
+              </div>
+              <div class="timer-item">
+                <span class="timer-value" id="seconds">00</span>
+                <span class="timer-label">Seconds</span>
+              </div>
+            </div>
+            <a href="./Build-and-Deploy-Ecommerce-Website-main/shop.html?deals=weekly" class="btn btn-secondary">
+              Shop Weekly Deals
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Featured Products -->
+    <section id="featured-products" class="featured-products section-p1" aria-labelledby="featured-heading">
+      <div class="container">
+        <header class="section-header text-center">
+          <h2 id="featured-heading">Featured Products</h2>
+          <p>Summer Collection New Modern Design</p>
+        </header>
+        
+        <div class="pro-container grid grid-cols-4" id="featured-products-grid" data-product-type="featured" data-limit="8">
+          <!-- Products will be loaded dynamically -->
+          <div class="product-card product-card--loading">
+            <div class="product-card__image-container">
+              <div class="product-card__image"></div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__brand">Loading...</div>
+              <div class="product-card__title">Loading product...</div>
+              <div class="product-card__rating">★★★★★</div>
+              <div class="product-card__price-container">
+                <span class="product-card__price">$0.00</span>
+              </div>
+              <button class="product-card__add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card product-card--loading">
+            <div class="product-card__image-container">
+              <div class="product-card__image"></div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__brand">Loading...</div>
+              <div class="product-card__title">Loading product...</div>
+              <div class="product-card__rating">★★★★★</div>
+              <div class="product-card__price-container">
+                <span class="product-card__price">$0.00</span>
+              </div>
+              <button class="product-card__add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card product-card--loading">
+            <div class="product-card__image-container">
+              <div class="product-card__image"></div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__brand">Loading...</div>
+              <div class="product-card__title">Loading product...</div>
+              <div class="product-card__rating">★★★★★</div>
+              <div class="product-card__price-container">
+                <span class="product-card__price">$0.00</span>
+              </div>
+              <button class="product-card__add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card product-card--loading">
+            <div class="product-card__image-container">
+              <div class="product-card__image"></div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__brand">Loading...</div>
+              <div class="product-card__title">Loading product...</div>
+              <div class="product-card__rating">★★★★★</div>
+              <div class="product-card__price-container">
+                <span class="product-card__price">$0.00</span>
+              </div>
+              <button class="product-card__add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section-footer text-center">
+          <a href="./Build-and-Deploy-Ecommerce-Website-main/shop.html" class="btn btn-outline">
+            View All Products
+            <i class="fas fa-arrow-right icon-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Personalized Recommendations -->
+    <section id="recommendations" class="recommendations section-p1" aria-labelledby="recommendations-heading">
+      <div class="container">
+        <header class="section-header text-center">
+          <h2 id="recommendations-heading">Recommended for You</h2>
+          <p>Based on your browsing history</p>
+        </header>
+        
+        <div class="pro-container grid grid-cols-4" id="recommendations-grid" data-product-type="all" data-limit="4">
+          <!-- Recommendations will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Promotion Banner -->
+    <section id="promotion-banner" class="promotion-banner section-m1">
+      <div class="banner-content">
+        <h4>Repair Service</h4>
+        <h2>Up to <span class="accent">75% off</span> - All t-Shirts & Accessories</h2>
+        <a href="./Build-and-Deploy-Ecommerce-Website-main/shop.html?category=t-shirts" class="btn btn-light">
+          Explore More
+        </a>
+      </div>
+    </section>
+    
+    <!-- New Arrivals -->
+    <section id="new-arrivals" class="new-arrivals section-p1" aria-labelledby="arrivals-heading">
+      <div class="container">
+        <header class="section-header text-center">
+          <h2 id="arrivals-heading">New Arrivals</h2>
+          <p>Latest Collection New Modern Design</p>
+        </header>
+        
+        <div class="pro-container grid grid-cols-4" id="new-arrivals-grid" data-product-type="new-arrivals" data-limit="8">
+          <!-- Products will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Newsletter Signup -->
+    <section id="newsletter" class="newsletter section-p1 section-m1" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <div class="newsletter__content">
+          <div class="newsletter__text">
+            <h4 id="newsletter-heading">Sign Up For Newsletter</h4>
+            <p>Get E-mail updates about our latest shop and <span class="accent">Special offers.</span></p>
+          </div>
+          <form class="newsletter__form" aria-label="Newsletter signup">
+            <label for="newsletter-email" class="sr-only">Email address</label>
+            <input 
+              type="email" 
+              id="newsletter-email"
+              placeholder="Your email address" 
+              required
+              aria-describedby="newsletter-desc"
+            >
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+          <p id="newsletter-desc" class="text-sm text-muted">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content grid grid-cols-4">
+        <div class="footer__column">
+          <img src="./Build-and-Deploy-Ecommerce-Website-main/img/logo.png" alt="Cara Logo" class="footer__logo">
+          <h4>Contact</h4>
+          <address>
+            <p><strong>Address:</strong> 562 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Phone:</strong> <a href="tel:+012222265">+01 2222 265</a> / <a href="tel:+923042424358">(+92) 304 2424358</a></p>
+            <p><strong>Hours:</strong> 10:00 - 18:00 Mon - Sat</p>
+          </address>
+          <div class="footer__social">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer__column">
+          <h4>About</h4>
+          <nav aria-label="About links">
+            <a href="./Build-and-Deploy-Ecommerce-Website-main/about.html">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="./Build-and-Deploy-Ecommerce-Website-main/contact.html">Contact Us</a>
+          </nav>
+        </div>
+        
+        <div class="footer__column">
+          <h4>Quick Links</h4>
+          <nav aria-label="Quick links">
+            <a href="#">Sign In</a>
+            <a href="./Build-and-Deploy-Ecommerce-Website-main/cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+          </nav>
+        </div>
+        
+        <div class="footer__column">
+          <h4>Install App</h4>
+          <p>From App Store or Google Play</p>
+          <div class="app-download">
+            <img src="./Build-and-Deploy-Ecommerce-Website-main/img/pay/app.jpg" alt="Download on App Store" loading="lazy">
+            <img src="./Build-and-Deploy-Ecommerce-Website-main/img/pay/play.jpg" alt="Get it on Google Play" loading="lazy">
+          </div>
+          <p>Secured Payment Gateways</p>
+          <img src="./Build-and-Deploy-Ecommerce-Website-main/img/pay/pay.png" alt="Accepted payment methods" loading="lazy">
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>&copy; 2024 Cara Shopping. All rights reserved. Created with ❤️ for modern e-commerce.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+  
+  <!-- Scripts -->
+  <script type="module" src="./scripts/theme.js"></script>
+  <script type="module" src="./scripts/ui/search.js"></script>
+  <script type="module" src="./scripts/data/productService.js"></script>
+  <script type="module" src="./scripts/ui/productGrid.js"></script>
+  <script type="module" src="./scripts/app.js"></script>
+  
+  <!-- Fallback for older browsers -->
+  <script nomodule>
+    console.warn('This browser does not support ES modules. Some features may not work properly.');
+  </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Cartoon Astronaut T-Shirt",
+      "description": "Comfortable cotton t-shirt with unique astronaut design. Perfect for casual wear and space enthusiasts.",
+      "category": "t-shirts",
+      "brand": "Adidas",
+      "price": 78,
+      "discountPercentage": 12,
+      "rating": 4.5,
+      "stock": 94,
+      "thumbnail": "./Build-and-Deploy-Ecommerce-Website-main/img/products/f1.jpg",
+      "images": [
+        "./Build-and-Deploy-Ecommerce-Website-main/img/products/f1.jpg"
+      ],
+      "colorOptions": ["white", "black", "gray"],
+      "sizeOptions": ["S", "M", "L", "XL"],
+      "tags": ["casual", "cotton", "graphic", "comfortable"]
+    },
+    {
+      "id": "2", 
+      "title": "Floral Print Summer Shirt",
+      "description": "Light and breathable floral print shirt perfect for summer days and casual outings.",
+      "category": "shirts",
+      "brand": "Adidas",
+      "price": 68,
+      "discountPercentage": 15,
+      "rating": 4.3,
+      "stock": 67,
+      "thumbnail": "./Build-and-Deploy-Ecommerce-Website-main/img/products/f2.jpg",
+      "images": [
+        "./Build-and-Deploy-Ecommerce-Website-main/img/products/f2.jpg"
+      ],
+      "colorOptions": ["floral", "white", "blue"],
+      "sizeOptions": ["S", "M", "L", "XL"],
+      "tags": ["summer", "floral", "light", "breathable"]
+    },
+    {
+      "id": "3",
+      "title": "Classic Denim Shirt",
+      "description": "Timeless denim shirt that goes with everything. Durable and stylish for any occasion.",
+      "category": "shirts",
+      "brand": "Adidas",
+      "price": 85,
+      "discountPercentage": 8,
+      "rating": 4.7,
+      "stock": 43,
+      "thumbnail": "./Build-and-Deploy-Ecommerce-Website-main/img/products/f3.jpg",
+      "images": [
+        "./Build-and-Deploy-Ecommerce-Website-main/img/products/f3.jpg"
+      ],
+      "colorOptions": ["denim", "light-blue", "dark-blue"],
+      "sizeOptions": ["S", "M", "L", "XL", "XXL"],
+      "tags": ["denim", "classic", "versatile", "durable"]
+    },
+    {
+      "id": "4",
+      "title": "Tropical Print Vacation Shirt",
+      "description": "Vibrant tropical print shirt perfect for vacations and beach days. Lightweight and comfortable.",
+      "category": "shirts",
+      "brand": "Adidas", 
+      "price": 72,
+      "discountPercentage": 20,
+      "rating": 4.2,
+      "stock": 78,
+      "thumbnail": "./Build-and-Deploy-Ecommerce-Website-main/img/products/f4.jpg",
+      "images": [
+        "./Build-and-Deploy-Ecommerce-Website-main/img/products/f4.jpg"
+      ],
+      "colorOptions": ["tropical", "green", "blue"],
+      "sizeOptions": ["S", "M", "L", "XL"],
+      "tags": ["tropical", "vacation", "beach", "lightweight"]
+    },
+    {
+      "id": "5",
+      "title": "Geometric Pattern Casual Shirt",
+      "description": "Modern geometric pattern shirt for the fashion-forward individual. Comfortable fit and trendy design.",
+      "category": "shirts",
+      "brand": "Adidas",
+      "price": 79,
+      "discountPercentage": 10,
+      "rating": 4.4,
+      "stock": 55,
+      "thumbnail": "./Build-and-Deploy-Ecommerce-Website-main/img/products/f5.jpg",
+      "images": [
+        "./Build-and-Deploy-Ecommerce-Website-main/img/products/f5.jpg"
+      ],
+      "colorOptions": ["multicolor", "black", "white"],
+      "sizeOptions": ["S", "M", "L", "XL"],
+      "tags": ["geometric", "modern", "trendy", "casual"]
+    },
+    {
+      "id": "6",
+      "title": "Minimalist Black T-Shirt",
+      "description": "Essential black t-shirt with premium quality fabric. Perfect for layering or wearing alone.",
+      "category": "t-shirts",
+      "brand": "Adidas",
+      "price": 65,
+      "discountPercentage": 5,
+      "rating": 4.6,
+      "stock": 120,
+      "thumbnail": "./Build-and-Deploy-Ecommerce-Website-main/img/products/f6.jpg",
+      "images": [
+        "./Build-and-Deploy-Ecommerce-Website-main/img/products/f6.jpg"
+      ],
+      "colorOptions": ["black", "white", "gray"],
+      "sizeOptions": ["S", "M", "L", "XL", "XXL"],
+      "tags": ["minimalist", "essential", "premium", "basic"]
+    },
+    {
+      "id": "7",
+      "title": "Vintage Graphic Tee",
+      "description": "Retro-inspired graphic t-shirt with vintage design. Soft cotton blend for all-day comfort.",
+      "category": "t-shirts",
+      "brand": "Adidas",
+      "price": 73,
+      "discountPercentage": 18,
+      "rating": 4.3,
+      "stock": 89,
+      "thumbnail": "./Build-and-Deploy-Ecommerce-Website-main/img/products/f7.jpg",
+      "images": [
+        "./Build-and-Deploy-Ecommerce-Website-main/img/products/f7.jpg"
+      ],
+      "colorOptions": ["vintage", "brown", "cream"],
+      "sizeOptions": ["S", "M", "L", "XL"],
+      "tags": ["vintage", "graphic", "retro", "cotton"]
+    },
+    {
+      "id": "8",
+      "title": "Striped Casual Polo",
+      "description": "Classic striped polo shirt perfect for smart-casual occasions. Comfortable fit and timeless style.",
+      "category": "shirts",
+      "brand": "Adidas",
+      "price": 82,
+      "discountPercentage": 12,
+      "rating": 4.5,
+      "stock": 76,
+      "thumbnail": "./Build-and-Deploy-Ecommerce-Website-main/img/products/f8.jpg",
+      "images": [
+        "./Build-and-Deploy-Ecommerce-Website-main/img/products/f8.jpg"
+      ],
+      "colorOptions": ["striped", "navy", "white"],
+      "sizeOptions": ["S", "M", "L", "XL"],
+      "tags": ["striped", "polo", "smart-casual", "classic"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "t-shirts",
+      "name": "T-Shirts",
+      "description": "Comfortable and stylish t-shirts for every occasion"
+    },
+    {
+      "id": "shirts",
+      "name": "Shirts", 
+      "description": "Classic and modern shirts for work and casual wear"
+    },
+    {
+      "id": "pants",
+      "name": "Pants",
+      "description": "Quality pants and trousers for all styles"
+    },
+    {
+      "id": "dresses",
+      "name": "Dresses",
+      "description": "Beautiful dresses for every occasion"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2024-01-15T00:00:00Z",
+    "totalProducts": 8,
+    "totalCategories": 4
+  }
+}

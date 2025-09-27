@@ -1,0 +1,136 @@
+{
+  "coupons": [
+    {
+      "id": "coupon-1",
+      "code": "WELCOME25",
+      "description": "25% off for new customers",
+      "type": "percent",
+      "value": 25,
+      "appliesTo": {
+        "type": "all"
+      },
+      "minCart": 50,
+      "startAt": "2024-01-01T00:00:00Z",
+      "endAt": "2024-12-31T23:59:59Z",
+      "usageLimit": 1000,
+      "perUserLimit": 1,
+      "stackable": false,
+      "status": "active",
+      "conditions": {
+        "newCustomers": true
+      }
+    },
+    {
+      "id": "coupon-2",
+      "code": "SAVE15",
+      "description": "15% off on orders over $75",
+      "type": "percent", 
+      "value": 15,
+      "appliesTo": {
+        "type": "all"
+      },
+      "minCart": 75,
+      "startAt": "2024-01-01T00:00:00Z",
+      "endAt": "2024-06-30T23:59:59Z",
+      "usageLimit": 500,
+      "perUserLimit": 3,
+      "stackable": false,
+      "status": "active"
+    },
+    {
+      "id": "coupon-3",
+      "code": "FREESHIP",
+      "description": "Free shipping on all orders",
+      "type": "shipping",
+      "value": 0,
+      "appliesTo": {
+        "type": "shipping"
+      },
+      "minCart": 25,
+      "startAt": "2024-01-01T00:00:00Z",
+      "endAt": "2024-12-31T23:59:59Z",
+      "usageLimit": null,
+      "perUserLimit": null,
+      "stackable": true,
+      "status": "active"
+    },
+    {
+      "id": "coupon-4",
+      "code": "TSHIRT20",
+      "description": "20% off all t-shirts",
+      "type": "percent",
+      "value": 20,
+      "appliesTo": {
+        "type": "category",
+        "categories": ["t-shirts"]
+      },
+      "minCart": 0,
+      "startAt": "2024-01-15T00:00:00Z",
+      "endAt": "2024-01-31T23:59:59Z",
+      "usageLimit": 200,
+      "perUserLimit": 2,
+      "stackable": false,
+      "status": "active"
+    },
+    {
+      "id": "coupon-5",
+      "code": "FLASH10",
+      "description": "$10 off flash sale items",
+      "type": "amount",
+      "value": 10,
+      "appliesTo": {
+        "type": "products",
+        "productIds": ["1", "2", "3", "4"]
+      },
+      "minCart": 40,
+      "startAt": "2024-01-20T08:00:00Z",
+      "endAt": "2024-01-20T20:00:00Z",
+      "usageLimit": 100,
+      "perUserLimit": 1,
+      "stackable": false,
+      "status": "upcoming"
+    },
+    {
+      "id": "coupon-6",
+      "code": "LOYALTY30",
+      "description": "30% off for loyalty members",
+      "type": "percent",
+      "value": 30,
+      "appliesTo": {
+        "type": "all"
+      },
+      "minCart": 100,
+      "startAt": "2024-01-01T00:00:00Z",
+      "endAt": "2024-12-31T23:59:59Z",
+      "usageLimit": 50,
+      "perUserLimit": 1,
+      "stackable": false,
+      "status": "active",
+      "conditions": {
+        "loyaltyLevel": "gold"
+      }
+    }
+  ],
+  "stackingRules": {
+    "maxStackableCoupons": 2,
+    "allowedCombinations": [
+      ["shipping", "percent"],
+      ["shipping", "amount"]
+    ],
+    "disallowedCombinations": [
+      ["percent", "percent"],
+      ["amount", "amount"]
+    ]
+  },
+  "rewardPoints": {
+    "earnRate": 1,
+    "redeemRate": 100,
+    "description": "Earn 1 point per $1 spent, redeem 100 points for $1 off"
+  },
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2024-01-15T00:00:00Z",
+    "totalActiveCoupons": 5,
+    "totalUpcomingCoupons": 1
+  }
+}
