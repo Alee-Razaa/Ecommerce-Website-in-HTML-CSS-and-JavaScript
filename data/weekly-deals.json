@@ -1,0 +1,85 @@
+{
+  "weeklyDeals": [
+    {
+      "id": "deal-1",
+      "title": "Summer Clearance Sale",
+      "description": "Up to 50% off on all summer collection items",
+      "type": "percent",
+      "value": 50,
+      "startAt": "2024-01-15T00:00:00Z",
+      "endAt": "2024-01-21T23:59:59Z",
+      "eligibility": {
+        "categories": ["t-shirts", "shirts"],
+        "minCart": 0
+      },
+      "status": "active",
+      "bannerImage": "./Build-and-Deploy-Ecommerce-Website-main/img/banner/b1.jpg",
+      "featured": true
+    },
+    {
+      "id": "deal-2", 
+      "title": "New Customer Special",
+      "description": "25% off for first-time shoppers",
+      "type": "percent",
+      "value": 25,
+      "startAt": "2024-01-15T00:00:00Z",
+      "endAt": "2024-01-21T23:59:59Z",
+      "eligibility": {
+        "newCustomers": true,
+        "minCart": 50
+      },
+      "status": "active",
+      "featured": false
+    },
+    {
+      "id": "deal-3",
+      "title": "Weekend Flash Sale",
+      "description": "$20 off orders over $100",
+      "type": "amount",
+      "value": 20,
+      "startAt": "2024-01-20T00:00:00Z", 
+      "endAt": "2024-01-21T23:59:59Z",
+      "eligibility": {
+        "minCart": 100
+      },
+      "status": "upcoming",
+      "featured": true
+    }
+  ],
+  "weeklySchedule": {
+    "currentWeek": {
+      "start": "2024-01-15T00:00:00Z",
+      "end": "2024-01-21T23:59:59Z"
+    },
+    "nextWeek": {
+      "start": "2024-01-22T00:00:00Z", 
+      "end": "2024-01-28T23:59:59Z"
+    }
+  },
+  "notifications": [
+    {
+      "id": "notif-1",
+      "type": "new_deal",
+      "title": "New Weekly Deal Available!",
+      "message": "Summer Clearance Sale is now live - up to 50% off!",
+      "dealId": "deal-1",
+      "priority": "high",
+      "expiresAt": "2024-01-21T23:59:59Z"
+    },
+    {
+      "id": "notif-2",
+      "type": "expiring_soon", 
+      "title": "Deal Ending Soon!",
+      "message": "Summer Clearance Sale ends in 48 hours",
+      "dealId": "deal-1",
+      "priority": "medium",
+      "showWhenHoursLeft": 48
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2024-01-15T00:00:00Z",
+    "recurrencePattern": "weekly",
+    "timezone": "UTC"
+  }
+}
