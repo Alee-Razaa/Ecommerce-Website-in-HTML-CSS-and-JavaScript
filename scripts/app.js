@@ -141,9 +141,16 @@ class App {
     }
     
     // Initialize product grid (on shop/home pages)
-    if (document.querySelector('.pro-container') && window.ProductGrid) {
-      this.components.productGrid = new window.ProductGrid('.pro-container');
-    }
+    const productGridSelectors = ['.pro-container', '#featured-products-grid', '#new-arrivals-grid', '#recommendations-grid'];
+    
+    productGridSelectors.forEach(selector => {
+      const gridElement = document.querySelector(selector);
+      if (gridElement && window.ProductGrid) {
+        const grid = new window.ProductGrid(selector);
+        this.components.productGrids = this.components.productGrids || [];
+        this.components.productGrids.push(grid);
+      }
+    });
     
     console.log('✅ UI components initialized');
   }

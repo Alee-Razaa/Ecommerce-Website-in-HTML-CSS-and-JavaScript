@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="./styles/base.css">
   <link rel="stylesheet" href="./styles/components/header.css">
   <link rel="stylesheet" href="./styles/components/buttons.css">
+  <link rel="stylesheet" href="./styles/components/product-card.css">
   <link rel="stylesheet" href="./styles/pages/home.css">
   
   <!-- Structured Data -->
@@ -268,12 +269,64 @@
           <p>Summer Collection New Modern Design</p>
         </header>
         
-        <div class="pro-container grid grid-cols-4" id="featured-products-grid">
+        <div class="pro-container grid grid-cols-4" id="featured-products-grid" data-product-type="featured" data-limit="8">
           <!-- Products will be loaded dynamically -->
-          <div class="product-skeleton"></div>
-          <div class="product-skeleton"></div>
-          <div class="product-skeleton"></div>
-          <div class="product-skeleton"></div>
+          <div class="product-card product-card--loading">
+            <div class="product-card__image-container">
+              <div class="product-card__image"></div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__brand">Loading...</div>
+              <div class="product-card__title">Loading product...</div>
+              <div class="product-card__rating">★★★★★</div>
+              <div class="product-card__price-container">
+                <span class="product-card__price">$0.00</span>
+              </div>
+              <button class="product-card__add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card product-card--loading">
+            <div class="product-card__image-container">
+              <div class="product-card__image"></div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__brand">Loading...</div>
+              <div class="product-card__title">Loading product...</div>
+              <div class="product-card__rating">★★★★★</div>
+              <div class="product-card__price-container">
+                <span class="product-card__price">$0.00</span>
+              </div>
+              <button class="product-card__add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card product-card--loading">
+            <div class="product-card__image-container">
+              <div class="product-card__image"></div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__brand">Loading...</div>
+              <div class="product-card__title">Loading product...</div>
+              <div class="product-card__rating">★★★★★</div>
+              <div class="product-card__price-container">
+                <span class="product-card__price">$0.00</span>
+              </div>
+              <button class="product-card__add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card product-card--loading">
+            <div class="product-card__image-container">
+              <div class="product-card__image"></div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__brand">Loading...</div>
+              <div class="product-card__title">Loading product...</div>
+              <div class="product-card__rating">★★★★★</div>
+              <div class="product-card__price-container">
+                <span class="product-card__price">$0.00</span>
+              </div>
+              <button class="product-card__add-to-cart">Add to Cart</button>
+            </div>
+          </div>
         </div>
         
         <div class="section-footer text-center">
@@ -293,7 +346,7 @@
           <p>Based on your browsing history</p>
         </header>
         
-        <div class="pro-container grid grid-cols-4" id="recommendations-grid">
+        <div class="pro-container grid grid-cols-4" id="recommendations-grid" data-product-type="all" data-limit="4">
           <!-- Recommendations will be loaded dynamically -->
         </div>
       </div>
@@ -318,7 +371,7 @@
           <p>Latest Collection New Modern Design</p>
         </header>
         
-        <div class="pro-container grid grid-cols-4" id="new-arrivals-grid">
+        <div class="pro-container grid grid-cols-4" id="new-arrivals-grid" data-product-type="new-arrivals" data-limit="8">
           <!-- Products will be loaded dynamically -->
         </div>
       </div>
@@ -420,6 +473,8 @@
   <!-- Scripts -->
   <script type="module" src="./scripts/theme.js"></script>
   <script type="module" src="./scripts/ui/search.js"></script>
+  <script type="module" src="./scripts/data/productService.js"></script>
+  <script type="module" src="./scripts/ui/productGrid.js"></script>
   <script type="module" src="./scripts/app.js"></script>
   
   <!-- Fallback for older browsers -->
